@@ -396,7 +396,7 @@ Use **bold** for character names and key moments.`;
     setStreaming(true);
 
     try {
-      const response = await fetch("/api/anthropic", {
+      const response = await fetch("https://api.anthropic.com/v1/messages", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -439,7 +439,7 @@ Use **bold** for character names and key moments.`;
       }
     } catch (e) {
       try {
-        const response = await fetch("/api/anthropic", {
+        const response = await fetch("https://api.anthropic.com/v1/messages", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
