@@ -132,7 +132,8 @@ const styles = `
   .config-poster { width: 60px; height: 84px; object-fit: cover; border-radius: 8px; }
   .config-title { font-family: 'Bebas Neue', sans-serif; font-size: 36px; line-height: 1; }
   .config-meta { font-size: 13px; color: var(--muted); margin-top: 4px; }
-  .config-back { background: none; border: none; color: var(--muted); font-family: 'DM Sans', sans-serif; font-size: 13px; cursor: pointer; text-decoration: underline; margin-bottom: 20px; padding: 0; }
+  .config-back { background: var(--surface); border: 1.5px solid var(--border); color: var(--text); font-family: 'DM Sans', sans-serif; font-size: 15px; cursor: pointer; border-radius: 8px; margin-bottom: 24px; padding: 12px 22px; display: inline-flex; align-items: center; gap: 6px; transition: border-color 0.2s; }
+.config-back:hover { border-color: var(--accent); }
   .config-back:hover { color: var(--text); }
 
   .section-label { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
