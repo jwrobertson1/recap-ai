@@ -377,7 +377,9 @@ export default function RecapAI() {
       deep: "a thorough recap covering all major subplots and character development (keep it under 1000 words)"
     };
 
-    const prompt = `Generate ${styleMap[recapStyle]} for ${selectedShow.name} ${selectedSeasons.sort().map(s => `Season ${s}`).join(" and ")}.
+    const prompt = `You are recapping a TV show using ONLY the episode data provided below. Do not say you lack information — use the episode titles and your general knowledge of the show to generate the recap. If the show is recent, make your best effort using the episode titles as a guide.
+
+Generate ${styleMap[recapStyle]} for ${selectedShow.name} ${selectedSeasons.sort().map(s => `Season ${s}`).join(" and ")}.
 
 Episodes: ${episodeData.map(s => `Season ${s.season}: ${s.episodes.join(", ")}`).join(" | ")}
 
