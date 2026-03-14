@@ -1,6 +1,8 @@
 import { useState } from "react";
 
-const YOUTUBE_API_KEY = "AIzaSyAM3ZDwDTu07JrTmdS5DsyRkpTJq-MhNY0";
+const YOUTUBE_API_KEY = process.env.REACT_APP_YOUTUBE_KEY || "AIzaSyAM3ZDwDTu07JrTmdS5DsyRkpTJq-MhNY0";
+const ENV_TMDB_KEY = process.env.REACT_APP_TMDB_KEY || "";
+const ENV_ANTHROPIC_KEY = process.env.REACT_APP_ANTHROPIC_KEY || "";
 
 const styles = `
   @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap');
@@ -287,12 +289,12 @@ export default function RecapAI() {
   const [error, setError] = useState("");
   const [youtubeVideos, setYoutubeVideos] = useState([]);
   const [activeVideo, setActiveVideo] = useState(0);
-  const [anthropicKey, setAnthropicKey] = useState(() => localStorage.getItem("recap_anthropic_key") || "");
-  const [tmdbKey, setTmdbKey] = useState(() => localStorage.getItem("recap_tmdb_key") || "");
+  const [anthropicKey, setAnthropicKey] = useState(() => ENV_ANTHROPIC_KEY || localStorage.getItem("recap_anthropic_key") || "");
+  const [tmdbKey, setTmdbKey] = useState(() => ENV_TMDB_KEY || localStorage.getItem("recap_tmdb_key") || "");
   const [keyInputAnthropic, setKeyInputAnthropic] = useState("");
   const [keyInputTmdb, setKeyInputTmdb] = useState("");
 
-  const needsSetup = !tmdbKey || !anthropicKey;
+  const needsSetup = (!tmdbKey || !anthropicKey) && (!ENV_TMDB_KEY || !ENV_ANTHROPIC_KEY);
 
   const saveKey = (type) => {
     if (type === "anthropic" && keyInputAnthropic) {
