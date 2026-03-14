@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 
 const TMDB_API_KEY = "YOUR_TMDB_API_KEY"; // Replace with your TMDB API key
 const TMDB_BASE = "https://api.themoviedb.org/3";
-const TMDB_IMAGE = "https://image.tmdb.org/t/p/w500";
+
 
 // --- Styles ---
 const styles = `/api/anthropic/v1/messages
@@ -518,30 +518,6 @@ const styles = `/api/anthropic/v1/messages
 `;
 
 // ---- Helpers ----
-async function searchShows(query) {
-  const url = `${TMDB_BASE}/search/tv?api_key=${TMDB_API_KEY}&query=${encodeURIComponent(query)}`;
-  const res = await fetch(url);
-  if (!res.ok) throw new Error("TMDB search failed");
-  const data = await res.json();
-  return data.results?.slice(0, 6) || [];
-}
-
-async function getSeasons(showId) {
-  const url = `${TMDB_BASE}/tv/${showId}?api_key=${TMDB_API_KEY}`;
-  const res = await fetch(url);
-  if (!res.ok) throw new Error("Failed to fetch show details");
-  const data = await res.json();
-  return data.seasons?.filter(s => s.season_number > 0) || [];
-}
-
-async function getEpisodes(showId, seasonNumber) {
-  const url = `${TMDB_BASE}/tv/${showId}/season/${seasonNumber}?api_key=${TMDB_API_KEY}`;
-  const res = await fetch(url);
-  if (!res.ok) return [];
-  const data = await res.json();
-  return data.episodes || [];
-}
-
 // ---- Main App ----
 export default function RecapAI() {
   const [phase, setPhase] = useState("search"); // search | configure | loading | recap
