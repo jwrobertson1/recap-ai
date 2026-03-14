@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState } from "react";
 
 const YOUTUBE_API_KEY = "AIzaSyAM3ZDwDTu07JrTmdS5DsyRkpTJq-MhNY0";
 
