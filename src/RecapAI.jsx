@@ -21,105 +21,28 @@ const styles = `
     --radius: 12px;
   }
 
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: 'DM Sans', sans-serif;
-    min-height: 100vh;
-    line-height: 1.6;
-  }
-
+  body { background: var(--bg); color: var(--text); font-family: 'DM Sans', sans-serif; min-height: 100vh; line-height: 1.6; }
   .app { min-height: 100vh; background: var(--bg); }
 
-  .hero {
-    position: relative;
-    padding: 80px 24px 60px;
-    text-align: center;
-    overflow: hidden;
-  }
-  .hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(232,255,71,0.08) 0%, transparent 70%);
-    pointer-events: none;
-  }
-  .hero-eyebrow {
-    display: inline-block;
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--accent);
-    border: 1px solid rgba(232,255,71,0.3);
-    padding: 6px 14px;
-    border-radius: 100px;
-    margin-bottom: 28px;
-  }
-  .hero h1 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(64px, 12vw, 120px);
-    line-height: 0.9;
-    letter-spacing: 2px;
-    color: var(--text);
-    margin-bottom: 8px;
-  }
+  .hero { position: relative; padding: 80px 24px 60px; text-align: center; overflow: hidden; }
+  .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(232,255,71,0.08) 0%, transparent 70%); pointer-events: none; }
+  .hero-eyebrow { display: inline-block; font-size: 11px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; color: var(--accent); border: 1px solid rgba(232,255,71,0.3); padding: 6px 14px; border-radius: 100px; margin-bottom: 28px; }
+  .hero h1 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(64px, 12vw, 120px); line-height: 0.9; letter-spacing: 2px; color: var(--text); margin-bottom: 8px; }
   .hero h1 span { color: var(--accent); }
-  .hero-sub {
-    font-size: 18px;
-    color: var(--muted);
-    font-weight: 300;
-    max-width: 480px;
-    margin: 20px auto 0;
-    font-style: italic;
-  }
+  .hero-sub { font-size: 18px; color: var(--muted); font-weight: 300; max-width: 480px; margin: 20px auto 0; font-style: italic; }
 
   .search-section { max-width: 680px; margin: 0 auto; padding: 0 24px 60px; }
   .search-wrap { position: relative; display: flex; }
-  .search-input {
-    flex: 1;
-    background: var(--surface);
-    border: 1.5px solid var(--border);
-    border-right: none;
-    border-radius: var(--radius) 0 0 var(--radius);
-    padding: 18px 22px;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 16px;
-    color: var(--text);
-    outline: none;
-    transition: border-color 0.2s;
-  }
+  .search-input { flex: 1; background: var(--surface); border: 1.5px solid var(--border); border-right: none; border-radius: var(--radius) 0 0 var(--radius); padding: 18px 22px; font-family: 'DM Sans', sans-serif; font-size: 16px; color: var(--text); outline: none; transition: border-color 0.2s; }
   .search-input::placeholder { color: var(--muted); }
   .search-input:focus { border-color: var(--accent); }
-  .search-btn {
-    background: var(--accent);
-    border: 1.5px solid var(--accent);
-    border-radius: 0 var(--radius) var(--radius) 0;
-    padding: 18px 28px;
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 18px;
-    letter-spacing: 1px;
-    color: #0a0a0f;
-    cursor: pointer;
-    transition: background 0.2s;
-  }
+  .search-btn { background: var(--accent); border: 1.5px solid var(--accent); border-radius: 0 var(--radius) var(--radius) 0; padding: 18px 28px; font-family: 'Bebas Neue', sans-serif; font-size: 18px; letter-spacing: 1px; color: #0a0a0f; cursor: pointer; transition: background 0.2s; }
   .search-btn:hover { background: #d4eb3a; }
   .search-btn:disabled { opacity: 0.5; cursor: not-allowed; }
 
   .results { max-width: 680px; margin: 0 auto; padding: 0 24px; }
   .results-label { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
-  .show-card {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    background: var(--surface);
-    border: 1.5px solid var(--border);
-    border-radius: var(--radius);
-    padding: 14px;
-    cursor: pointer;
-    margin-bottom: 10px;
-    transition: border-color 0.2s, background 0.2s;
-  }
+  .show-card { display: flex; align-items: center; gap: 16px; background: var(--surface); border: 1.5px solid var(--border); border-radius: var(--radius); padding: 14px; cursor: pointer; margin-bottom: 10px; transition: border-color 0.2s, background 0.2s; }
   .show-card:hover { border-color: var(--accent); background: var(--surface2); }
   .show-thumb { width: 52px; height: 72px; object-fit: cover; border-radius: 6px; flex-shrink: 0; }
   .show-thumb-placeholder { width: 52px; height: 72px; background: var(--surface2); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0; }
@@ -132,53 +55,40 @@ const styles = `
   .config-poster { width: 60px; height: 84px; object-fit: cover; border-radius: 8px; }
   .config-title { font-family: 'Bebas Neue', sans-serif; font-size: 36px; line-height: 1; }
   .config-meta { font-size: 13px; color: var(--muted); margin-top: 4px; }
-  .config-back { background: none; border: none; color: var(--muted); font-family: 'DM Sans', sans-serif; font-size: 13px; cursor: pointer; text-decoration: underline; margin-bottom: 20px; padding: 0; }
-  .config-back:hover { color: var(--text); }
+  .config-back { background: var(--surface); border: 1.5px solid var(--border); color: var(--text); font-family: 'DM Sans', sans-serif; font-size: 15px; cursor: pointer; border-radius: 8px; margin-bottom: 24px; padding: 12px 22px; display: inline-flex; align-items: center; gap: 6px; transition: border-color 0.2s; }
+  .config-back:hover { border-color: var(--accent); }
 
   .section-label { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
   .seasons-grid { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 32px; }
-  .season-pill {
-    background: var(--surface);
-    border: 1.5px solid var(--border);
-    border-radius: 100px;
-    padding: 8px 18px;
-    font-size: 14px;
-    cursor: pointer;
-    transition: all 0.2s;
-    color: var(--text);
-    font-family: 'DM Sans', sans-serif;
-  }
+  .season-pill { background: var(--surface); border: 1.5px solid var(--border); border-radius: 100px; padding: 8px 18px; font-size: 14px; cursor: pointer; transition: all 0.2s; color: var(--text); font-family: 'DM Sans', sans-serif; }
   .season-pill:hover { border-color: var(--accent); }
   .season-pill.selected { background: var(--accent); border-color: var(--accent); color: #0a0a0f; font-weight: 500; }
 
+  /* Recap Mode Toggle */
+  .mode-toggle { display: flex; gap: 8px; margin-bottom: 24px; }
+  .mode-btn { flex: 1; background: var(--surface); border: 1.5px solid var(--border); border-radius: var(--radius); padding: 14px; font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 500; color: var(--muted); cursor: pointer; transition: all 0.2s; text-align: center; }
+  .mode-btn:hover { border-color: var(--accent); color: var(--text); }
+  .mode-btn.active { border-color: var(--accent); background: rgba(232,255,71,0.05); color: var(--text); }
+  .mode-btn .mode-icon { font-size: 20px; display: block; margin-bottom: 4px; }
+
+  /* Episode Range */
+  .episode-range { background: var(--surface); border: 1.5px solid var(--border); border-radius: var(--radius); padding: 20px; margin-bottom: 24px; animation: fadeUp 0.3s ease; }
+  .episode-range-title { font-size: 13px; color: var(--muted); margin-bottom: 14px; }
+  .episode-range-inputs { display: flex; align-items: center; gap: 12px; }
+  .episode-range-inputs span { color: var(--muted); font-size: 14px; }
+  .episode-num-input { background: var(--surface2); border: 1.5px solid var(--border); border-radius: 8px; padding: 10px 14px; font-family: 'DM Sans', sans-serif; font-size: 16px; color: var(--text); width: 80px; text-align: center; outline: none; transition: border-color 0.2s; }
+  .episode-num-input:focus { border-color: var(--accent); }
+  .episode-range-hint { font-size: 12px; color: var(--muted); margin-top: 10px; font-style: italic; }
+
   .style-options { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 32px; }
-  .style-card {
-    background: var(--surface);
-    border: 1.5px solid var(--border);
-    border-radius: var(--radius);
-    padding: 16px 12px;
-    cursor: pointer;
-    text-align: center;
-    transition: all 0.2s;
-  }
+  .style-card { background: var(--surface); border: 1.5px solid var(--border); border-radius: var(--radius); padding: 16px 12px; cursor: pointer; text-align: center; transition: all 0.2s; }
   .style-card:hover { border-color: var(--accent); }
   .style-card.selected { border-color: var(--accent); background: rgba(232,255,71,0.05); }
   .style-card .style-icon { font-size: 22px; margin-bottom: 6px; }
   .style-card .style-name { font-size: 13px; font-weight: 500; }
   .style-card .style-desc { font-size: 11px; color: var(--muted); margin-top: 2px; }
 
-  .video-toggle {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 16px 20px;
-    background: var(--surface);
-    border: 1.5px solid var(--border);
-    border-radius: var(--radius);
-    margin-bottom: 28px;
-    cursor: pointer;
-    transition: border-color 0.2s;
-  }
+  .video-toggle { display: flex; align-items: center; gap: 12px; padding: 16px 20px; background: var(--surface); border: 1.5px solid var(--border); border-radius: var(--radius); margin-bottom: 28px; cursor: pointer; transition: border-color 0.2s; }
   .video-toggle:hover { border-color: var(--accent); }
   .toggle-switch { width: 40px; height: 22px; background: var(--border); border-radius: 100px; position: relative; transition: background 0.2s; flex-shrink: 0; }
   .toggle-switch.on { background: var(--accent); }
@@ -187,19 +97,7 @@ const styles = `
   .toggle-label { font-size: 14px; }
   .toggle-sublabel { font-size: 12px; color: var(--muted); }
 
-  .generate-btn {
-    width: 100%;
-    background: var(--accent);
-    border: none;
-    border-radius: var(--radius);
-    padding: 20px;
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 22px;
-    letter-spacing: 2px;
-    color: #0a0a0f;
-    cursor: pointer;
-    transition: background 0.2s;
-  }
+  .generate-btn { width: 100%; background: var(--accent); border: none; border-radius: var(--radius); padding: 20px; font-family: 'Bebas Neue', sans-serif; font-size: 22px; letter-spacing: 2px; color: #0a0a0f; cursor: pointer; transition: background 0.2s; }
   .generate-btn:hover { background: #d4eb3a; }
   .generate-btn:disabled { opacity: 0.4; cursor: not-allowed; }
 
@@ -209,21 +107,7 @@ const styles = `
   .recap-title { font-family: 'Bebas Neue', sans-serif; font-size: 52px; line-height: 0.95; }
   .recap-subtitle { font-size: 14px; color: var(--muted); margin-top: 6px; }
   .recap-actions { display: flex; gap: 10px; flex-shrink: 0; margin-top: 8px; }
-  .action-btn {
-    background: var(--surface);
-    border: 1.5px solid var(--border);
-    border-radius: 8px;
-    padding: 8px 14px;
-    font-size: 13px;
-    color: var(--text);
-    cursor: pointer;
-    font-family: 'DM Sans', sans-serif;
-    transition: border-color 0.2s;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    text-decoration: none;
-  }
+  .action-btn { background: var(--surface); border: 1.5px solid var(--border); border-radius: 8px; padding: 8px 14px; font-size: 13px; color: var(--text); cursor: pointer; font-family: 'DM Sans', sans-serif; transition: border-color 0.2s; display: flex; align-items: center; gap: 6px; text-decoration: none; }
   .action-btn:hover { border-color: var(--accent); }
 
   .recap-divider { border: none; height: 1px; background: var(--border); margin: 32px 0; }
@@ -235,21 +119,7 @@ const styles = `
   .video-section-title { font-family: 'Bebas Neue', sans-serif; font-size: 28px; margin-bottom: 18px; display: flex; align-items: center; gap: 10px; }
   .video-section-title span { color: var(--accent2); }
   .video-tabs { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
-  .video-tab {
-    background: var(--surface);
-    border: 1.5px solid var(--border);
-    border-radius: 8px;
-    padding: 8px 14px;
-    font-size: 12px;
-    color: var(--muted);
-    cursor: pointer;
-    font-family: 'DM Sans', sans-serif;
-    transition: all 0.2s;
-    max-width: 240px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
+  .video-tab { background: var(--surface); border: 1.5px solid var(--border); border-radius: 8px; padding: 8px 14px; font-size: 12px; color: var(--muted); cursor: pointer; font-family: 'DM Sans', sans-serif; transition: all 0.2s; max-width: 240px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .video-tab:hover { border-color: var(--accent); color: var(--text); }
   .video-tab.active { border-color: var(--accent2); color: var(--text); background: rgba(255,77,109,0.08); }
   .video-embed { aspect-ratio: 16/9; width: 100%; border-radius: var(--radius); border: 1.5px solid var(--border); background: var(--surface); overflow: hidden; }
@@ -282,6 +152,10 @@ export default function RecapAI() {
   const [selectedShow, setSelectedShow] = useState(null);
   const [seasons, setSeasons] = useState([]);
   const [selectedSeasons, setSelectedSeasons] = useState([]);
+  const [recapMode, setRecapMode] = useState("season"); // "season" | "episode"
+  const [episodeFrom, setEpisodeFrom] = useState(1);
+  const [episodeTo, setEpisodeTo] = useState(3);
+  const [episodeSeason, setEpisodeSeason] = useState(1);
   const [recapStyle, setRecapStyle] = useState("standard");
   const [includeVideo, setIncludeVideo] = useState(true);
   const [recapText, setRecapText] = useState("");
@@ -289,6 +163,7 @@ export default function RecapAI() {
   const [error, setError] = useState("");
   const [youtubeVideos, setYoutubeVideos] = useState([]);
   const [activeVideo, setActiveVideo] = useState(0);
+  const [recapLabel, setRecapLabel] = useState("");
   const [anthropicKey, setAnthropicKey] = useState(() => ENV_ANTHROPIC_KEY || localStorage.getItem("recap_anthropic_key") || "");
   const [tmdbKey, setTmdbKey] = useState(() => ENV_TMDB_KEY || localStorage.getItem("recap_tmdb_key") || "");
   const [keyInputAnthropic, setKeyInputAnthropic] = useState("");
@@ -330,7 +205,9 @@ export default function RecapAI() {
     setSelectedSeasons([]);
     const res = await fetch(`https://api.themoviedb.org/3/tv/${show.id}?api_key=${tmdbKey}`);
     const data = await res.json();
-    setSeasons(data.seasons?.filter(s => s.season_number > 0) || []);
+    const filteredSeasons = data.seasons?.filter(s => s.season_number > 0) || [];
+    setSeasons(filteredSeasons);
+    if (filteredSeasons.length > 0) setEpisodeSeason(filteredSeasons[0].season_number);
     setPhase("configure");
   };
 
@@ -338,11 +215,10 @@ export default function RecapAI() {
     setSelectedSeasons(prev => prev.includes(num) ? prev.filter(n => n !== num) : [...prev, num]);
   };
 
-  const fetchYoutubeVideos = async (showName, seasonNums) => {
-    const query = `${showName} season ${seasonNums.join(" ")} recap`;
+  const fetchYoutubeVideos = async (query) => {
     try {
       const res = await fetch(
-        `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(query)}&type=video&maxResults=3&key=${YOUTUBE_API_KEY}`
+        `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(query)}&type=video&maxResults=3&videoDuration=medium&key=${YOUTUBE_API_KEY}`
       );
       const data = await res.json();
       setYoutubeVideos(data.items || []);
@@ -353,33 +229,68 @@ export default function RecapAI() {
   };
 
   const handleGenerate = async () => {
-    if (!anthropicKey || selectedSeasons.length === 0) return;
+    const isEpisodeMode = recapMode === "episode";
+    if (!anthropicKey) return;
+    if (!isEpisodeMode && selectedSeasons.length === 0) { setError("Select at least one season."); return; }
+
     setPhase("loading");
     setRecapText("");
     setYoutubeVideos([]);
     setError("");
 
-    if (includeVideo) {
-      fetchYoutubeVideos(selectedShow.name, selectedSeasons.sort());
-    }
+    let prompt = "";
+    let label = "";
 
-    let episodeData = [];
-    for (const sNum of selectedSeasons.sort()) {
-      const res = await fetch(`https://api.themoviedb.org/3/tv/${selectedShow.id}/season/${sNum}?api_key=${tmdbKey}`);
+    if (isEpisodeMode) {
+      // Episode range mode
+      const seasonNum = episodeSeason;
+      const fromEp = Math.max(1, episodeFrom);
+      const toEp = Math.max(fromEp, episodeTo);
+      label = `Season ${seasonNum}, Episodes ${fromEp}–${toEp}`;
+
+      const res = await fetch(`https://api.themoviedb.org/3/tv/${selectedShow.id}/season/${seasonNum}?api_key=${tmdbKey}`);
       const data = await res.json();
-      const eps = data.episodes || [];
-      episodeData.push({ season: sNum, episodes: eps.map(e => `S${sNum}E${e.episode_number}: ${e.name}`) });
-    }
+      const eps = (data.episodes || []).filter(e => e.episode_number >= fromEp && e.episode_number <= toEp);
+      const epList = eps.map(e => `E${e.episode_number}: ${e.name}${e.overview ? ` — ${e.overview}` : ""}`).join("\n");
 
-    const styleMap = {
-      quick: "a concise summary with only the most critical plot points (keep it under 300 words)",
-      standard: "a clear recap covering main plot points, key character arcs, and the season ending (keep it under 600 words)",
-      deep: "a thorough recap covering all major subplots and character development (keep it under 1000 words)"
-    };
+      if (includeVideo) fetchYoutubeVideos(`${selectedShow.name} season ${seasonNum} episode ${fromEp} recap`);
 
-    const prompt = `You are recapping a TV show using ONLY the episode data provided below. Do not say you lack information — use the episode titles and your general knowledge of the show to generate the recap. If the show is recent, make your best effort using the episode titles as a guide.
+      prompt = `You are recapping specific episodes of a TV show. Use the episode data provided below and your general knowledge of the show.
 
-Generate ${styleMap[recapStyle]} for ${selectedShow.name} ${selectedSeasons.sort().map(s => `Season ${s}`).join(" and ")}.
+Generate a clear recap of ${selectedShow.name} Season ${seasonNum}, Episodes ${fromEp} through ${toEp}.
+
+Episodes:
+${epList}
+
+Structure:
+1. **What Happened** — chronological walkthrough of key events across these episodes
+2. **Character Moments** — important character developments
+3. **Where Things Stand** — state of affairs after episode ${toEp}
+
+Keep it concise and focused. Use **bold** for character names and key moments.`;
+
+    } else {
+      // Full season mode
+      label = selectedSeasons.sort().map(s => `Season ${s}`).join(", ");
+      if (includeVideo) fetchYoutubeVideos(`${selectedShow.name} season ${selectedSeasons.sort().join(" ")} recap`);
+
+      let episodeData = [];
+      for (const sNum of selectedSeasons.sort()) {
+        const res = await fetch(`https://api.themoviedb.org/3/tv/${selectedShow.id}/season/${sNum}?api_key=${tmdbKey}`);
+        const data = await res.json();
+        const eps = data.episodes || [];
+        episodeData.push({ season: sNum, episodes: eps.map(e => `S${sNum}E${e.episode_number}: ${e.name}`) });
+      }
+
+      const styleMap = {
+        quick: "a concise summary with only the most critical plot points (keep it under 300 words)",
+        standard: "a clear recap covering main plot points, key character arcs, and the season ending (keep it under 600 words)",
+        deep: "a thorough recap covering all major subplots and character development (keep it under 1000 words)"
+      };
+
+      prompt = `You are recapping a TV show using ONLY the episode data provided below. Do not say you lack information — use the episode titles and your general knowledge of the show to generate the recap. If the show is recent, make your best effort using the episode titles as a guide.
+
+Generate ${styleMap[recapStyle]} for ${selectedShow.name} ${label}.
 
 Episodes: ${episodeData.map(s => `Season ${s.season}: ${s.episodes.join(", ")}`).join(" | ")}
 
@@ -391,7 +302,9 @@ Use this structure:
 5. **Remember Before Next Season** — 3 bullet points
 
 Use **bold** for character names and key moments.`;
+    }
 
+    setRecapLabel(label);
     setPhase("recap");
     setStreaming(true);
 
@@ -473,6 +386,10 @@ Use **bold** for character names and key moments.`;
     });
   };
 
+  const canGenerate = recapMode === "episode"
+    ? !!anthropicKey
+    : selectedSeasons.length > 0 && !!anthropicKey;
+
   return (
     <div className="app">
       <style>{styles}</style>
@@ -548,29 +465,84 @@ Use **bold** for character names and key moments.`;
             </div>
           </div>
 
-          <p className="section-label">Select Season(s)</p>
-          <div className="seasons-grid">
-            {seasons.map(s => (
-              <button key={s.season_number} className={`season-pill ${selectedSeasons.includes(s.season_number) ? "selected" : ""}`} onClick={() => toggleSeason(s.season_number)}>
-                Season {s.season_number}
-              </button>
-            ))}
+          {/* MODE TOGGLE */}
+          <p className="section-label">Recap Type</p>
+          <div className="mode-toggle">
+            <div className={`mode-btn ${recapMode === "season" ? "active" : ""}`} onClick={() => setRecapMode("season")}>
+              <span className="mode-icon">📺</span>
+              Full Season
+            </div>
+            <div className={`mode-btn ${recapMode === "episode" ? "active" : ""}`} onClick={() => setRecapMode("episode")}>
+              <span className="mode-icon">😴</span>
+              Episode Range
+            </div>
           </div>
 
-          <p className="section-label">Recap Style</p>
-          <div className="style-options">
-            {[
-              { id: "quick", icon: "⚡", name: "Quick", desc: "~300 words" },
-              { id: "standard", icon: "📖", name: "Standard", desc: "~600 words" },
-              { id: "deep", icon: "🔍", name: "Deep Dive", desc: "~1000 words" },
-            ].map(style => (
-              <div key={style.id} className={`style-card ${recapStyle === style.id ? "selected" : ""}`} onClick={() => setRecapStyle(style.id)}>
-                <div className="style-icon">{style.icon}</div>
-                <div className="style-name">{style.name}</div>
-                <div className="style-desc">{style.desc}</div>
+          {/* SEASON MODE */}
+          {recapMode === "season" && (
+            <>
+              <p className="section-label">Select Season(s)</p>
+              <div className="seasons-grid">
+                {seasons.map(s => (
+                  <button key={s.season_number} className={`season-pill ${selectedSeasons.includes(s.season_number) ? "selected" : ""}`} onClick={() => toggleSeason(s.season_number)}>
+                    Season {s.season_number}
+                  </button>
+                ))}
               </div>
-            ))}
-          </div>
+
+              <p className="section-label">Recap Style</p>
+              <div className="style-options">
+                {[
+                  { id: "quick", icon: "⚡", name: "Quick", desc: "~300 words" },
+                  { id: "standard", icon: "📖", name: "Standard", desc: "~600 words" },
+                  { id: "deep", icon: "🔍", name: "Deep Dive", desc: "~1000 words" },
+                ].map(style => (
+                  <div key={style.id} className={`style-card ${recapStyle === style.id ? "selected" : ""}`} onClick={() => setRecapStyle(style.id)}>
+                    <div className="style-icon">{style.icon}</div>
+                    <div className="style-name">{style.name}</div>
+                    <div className="style-desc">{style.desc}</div>
+                  </div>
+                ))}
+              </div>
+            </>
+          )}
+
+          {/* EPISODE RANGE MODE */}
+          {recapMode === "episode" && (
+            <>
+              <p className="section-label">Select Season</p>
+              <div className="seasons-grid" style={{ marginBottom: 20 }}>
+                {seasons.map(s => (
+                  <button key={s.season_number} className={`season-pill ${episodeSeason === s.season_number ? "selected" : ""}`} onClick={() => setEpisodeSeason(s.season_number)}>
+                    Season {s.season_number}
+                  </button>
+                ))}
+              </div>
+
+              <div className="episode-range">
+                <p className="episode-range-title">Which episodes do you need to catch up on?</p>
+                <div className="episode-range-inputs">
+                  <span>Episodes</span>
+                  <input
+                    className="episode-num-input"
+                    type="number"
+                    min="1"
+                    value={episodeFrom}
+                    onChange={e => setEpisodeFrom(parseInt(e.target.value) || 1)}
+                  />
+                  <span>through</span>
+                  <input
+                    className="episode-num-input"
+                    type="number"
+                    min="1"
+                    value={episodeTo}
+                    onChange={e => setEpisodeTo(parseInt(e.target.value) || 1)}
+                  />
+                </div>
+                <p className="episode-range-hint">e.g. fell asleep during episodes 4–6? Enter 4 and 6.</p>
+              </div>
+            </>
+          )}
 
           <div className="video-toggle" onClick={() => setIncludeVideo(v => !v)}>
             <div className={`toggle-switch ${includeVideo ? "on" : ""}`}><div className="toggle-knob" /></div>
@@ -582,8 +554,8 @@ Use **bold** for character names and key moments.`;
 
           {error && <div className="error-box">{error}</div>}
 
-          <button className="generate-btn" onClick={handleGenerate} disabled={selectedSeasons.length === 0 || !anthropicKey}>
-            {!anthropicKey ? "ADD ANTHROPIC KEY ABOVE" : selectedSeasons.length === 0 ? "SELECT A SEASON" : "GENERATE RECAP →"}
+          <button className="generate-btn" onClick={handleGenerate} disabled={!canGenerate}>
+            {!anthropicKey ? "ADD ANTHROPIC KEY ABOVE" : !canGenerate ? "SELECT A SEASON" : "GENERATE RECAP →"}
           </button>
         </div>
       )}
@@ -600,9 +572,9 @@ Use **bold** for character names and key moments.`;
         <div className="recap-section">
           <div className="recap-header">
             <div>
-              <p className="recap-eyebrow">✦ Season Recap</p>
+              <p className="recap-eyebrow">✦ {recapMode === "episode" ? "Episode Recap" : "Season Recap"}</p>
               <h1 className="recap-title">{selectedShow?.name}</h1>
-              <p className="recap-subtitle">{selectedSeasons.sort().map(s => `Season ${s}`).join(", ")} · {recapStyle === "quick" ? "Quick" : recapStyle === "deep" ? "Deep Dive" : "Standard"}</p>
+              <p className="recap-subtitle">{recapLabel} · {recapMode === "episode" ? "Episode Range" : recapStyle === "quick" ? "Quick" : recapStyle === "deep" ? "Deep Dive" : "Standard"}</p>
             </div>
             <div className="recap-actions">
               <button className="action-btn" onClick={() => { setPhase("configure"); setRecapText(""); setYoutubeVideos([]); }}>← New Recap</button>
@@ -618,7 +590,6 @@ Use **bold** for character names and key moments.`;
 
           <hr className="recap-divider" />
 
-          {/* VIDEO FIRST */}
           {includeVideo && (
             <div className="video-section">
               <div className="video-section-title">🎬 Video <span>Recap</span></div>
@@ -638,7 +609,7 @@ Use **bold** for character names and key moments.`;
                 </>
               ) : (
                 <p style={{ color: "var(--muted)", fontSize: 14, fontStyle: "italic", marginBottom: 8 }}>
-                  {streaming ? "Finding videos…" : "No videos found for this season."}
+                  {streaming ? "Finding videos…" : "No videos found."}
                 </p>
               )}
             </div>
@@ -646,7 +617,6 @@ Use **bold** for character names and key moments.`;
 
           <hr className="recap-divider" />
 
-          {/* TEXT RECAP */}
           <div className={`recap-body ${streaming ? "streaming-cursor" : ""}`}>
             {formatRecap(recapText)}
           </div>
